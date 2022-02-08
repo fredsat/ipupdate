@@ -13,9 +13,9 @@ then
       sudo cp multipool_ipupdate /usr/bin/ipupdate
       cd $HOME
       rm -drf temp_ipupdate_script_install
-    else
-      echo "Could not find serverconfig.php in the right folder!"
-      exit 1
+  else
+    echo "Could not find serverconfig.php in the right folder!"
+    exit 1
   fi
 else
   if [ -d "/var/web/" ] && [ -f "/var/web/serverconfig.php" ]
@@ -26,9 +26,9 @@ else
       sudo cp standard_ipupdate /usr/bin/ipupdate
       cd $HOME
       rm -drf temp_ipupdate_script_install
-    else
-      echo "Could not find serverconfig.php in the right folder!"
-      exit 1
+  else
+    echo "Could not find serverconfig.php in the right folder!"
+    exit 1
   fi
 else
   echo "Could not find standard Yiimp folders. Check your installation first!"
