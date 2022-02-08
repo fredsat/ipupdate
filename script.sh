@@ -50,8 +50,7 @@ clear
 sudo chmod a+x /usr/bin/ipchange
 echo "Installation complete. Do you want to run the script (Y/n)?"
 read yno
-[ yno == "Y" ] || [ yno == "y" ] && { bash /usr/bin/ipchange; exit 0; }
-clear
+[[ yno == "Y" ] || [ yno == "y" ]] && { bash /usr/bin/ipchange; exit 0; }
 echo "To run the script, use the command: ipchange"
 echo
 echo
