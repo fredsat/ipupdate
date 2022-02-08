@@ -3,7 +3,7 @@
 clear
 cd $HOME
 
-[ -d "temp_ipupdate_script_install" ] && { rm -drf temp_ipupdate_script_install; }
+[ -d "ipupdate" ] && { rm -drf ipupdate; }
 if [ -d "/home/crypto-data/" ]
 then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
@@ -11,10 +11,10 @@ then
     sudo touch /usr/bin/ipupdate
     git clone https://github.com/fredsat/ipupdate.git
     echo "Installing for multipool-installer"
-    mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
-    sudo cat ipupdate/multipool_ipupdate > /usr/bin/ipupdate
+    cd ipupdate
+    sudo cat multipool_ipupdate > /usr/bin/ipupdate
     cd $HOME
-    rm -drf temp_ipupdate_script_install
+    rm -drf ipupdate
   else
     echo "ERROR: Could not find serverconfig.php in the right folder!"
     echo
@@ -26,12 +26,12 @@ then
   if [ -f "/var/web/serverconfig.php" ]
   then
     sudo touch /usr/bin/ipupdate
-    mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
-    git clone 'https://github.com/fredsat/ipupdate.git'
+	git clone 'https://github.com/fredsat/ipupdate.git'
+    cd ipupdate
     echo "Installing for standard yiimp install"
-    sudo cat ipupdate/standard_ipupdate > /usr/bin/ipupdate
+    sudo cat standard_ipupdate > /usr/bin/ipupdate
     cd $HOME
-    rm -drf temp_ipupdate_script_install
+    rm -drf ipupdate
   else
     echo "ERROR: Could not find serverconfig.php in the right folder!"
     echo
@@ -44,7 +44,6 @@ else
   echo
   exit 1
 fi
-clear
 sudo chmod a+x /usr/bin/ipupdate
 read -r -p "Installation complete. Do you want to run the script [Y/n] ? " yn
 case $yn in
