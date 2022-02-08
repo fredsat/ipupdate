@@ -2,14 +2,17 @@
 
 clear
 cd $HOME
-mkdir temp_install && cd temp_install
-git clone 
+
 if [ -d "/home/crypto-data/" ]
 then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
     then
       echo "Installing for multipool-installer"
-      #sudo wget ######
+      mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
+      git clone https://github.com/fredsat/butkpoolscripts.git
+      sudo cp multipool_ipupdate /usr/bin/ipupdate
+      cd $HOME
+      rm -drf temp_ipupdate_script_install
     else
       echo "Could not find serverconfig.php in the right folder!"
       exit 1
@@ -17,8 +20,12 @@ then
 else
   if [ -d "/var/web/" ] && [ -f "/var/web/serverconfig.php" ]
     then
+      mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
+      git clone https://github.com/fredsat/butkpoolscripts.git
       echo "Installing for standard yiimp install"
-      #sudo wget àààààà
+      sudo cp standard_ipupdate /usr/bin/ipupdate
+      cd $HOME
+      rm -drf temp_ipupdate_script_install
     else
       echo "Could not find serverconfig.php in the right folder!"
       exit 1
