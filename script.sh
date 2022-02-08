@@ -6,6 +6,8 @@ fi
 clear
 cd $HOME
 
+[ -d "$HOME/temp_ipupdate_script_install ] && { rm -dr temp_ipupdate_script_install; }
+
 if [ -d "/home/crypto-data/" ]
 then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
