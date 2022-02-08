@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 clear
-
+cd $HOME
+mkdir temp_install && cd temp_install
+git clone 
 if [ -d "/home/crypto-data/" ]
 then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
