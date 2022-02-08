@@ -8,7 +8,7 @@ if [ -d "/home/crypto-data/" ]
 then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
   then
-    sudo touch /var/bin/ipupdate
+    sudo touch /usr/bin/ipupdate
     git clone https://github.com/fredsat/ipupdate.git
     echo "Installing for multipool-installer"
     mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
