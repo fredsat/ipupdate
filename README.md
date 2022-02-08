@@ -1,2 +1,4 @@
 # butkpoolscripts
-Initial setup for Butk Lyra2z30 pool
+Script for changing admin IP to yiimp installations.
+
+Usage: ```curl https://raw.githubusercontent.com/fredsat/ipupdate/main/script.sh | bash```
