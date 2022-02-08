@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIGDIR='/home/crypto-data/yiimp/site/configuration/'
+CONFIGDIR='/home/crypto-data/yiimp/site/configuration'
 OLDIP=$(awk '/YAAMP_ADMIN_IP/ {print $2}' $CONFIGDIR/serverconfig.php | sed -r s/[\'\;]//g | sed s/")"//g)
 NEWIP=$(echo $SSH_CLIENT | awk '{print $1}')
 
