@@ -9,10 +9,10 @@ then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
   then
     sudo touch /var/bin/ipupdate
-    git clone https://github.com/fredsat/butkpoolscripts.git
+    git clone https://github.com/fredsat/ipupdate.git
     echo "Installing for multipool-installer"
     mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
-    sudo cat multipool_ipupdate > /usr/bin/ipupdate
+    sudo cat ipupdate/multipool_ipupdate > /usr/bin/ipupdate
     cd $HOME
     rm -drf temp_ipupdate_script_install
   else
@@ -27,9 +27,9 @@ then
   then
     sudo touch /usr/bin/ipupdate
     mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
-    git clone 'https://github.com/fredsat/butkpoolscripts.git'
+    git clone 'https://github.com/fredsat/ipupdate.git'
     echo "Installing for standard yiimp install"
-    sudo cat standard_ipupdate > /usr/bin/ipupdate
+    sudo cat ipupdate/standard_ipupdate > /usr/bin/ipupdate
     cd $HOME
     rm -drf temp_ipupdate_script_install
   else
