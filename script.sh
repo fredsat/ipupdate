@@ -54,4 +54,4 @@ sudo chmod a+x /usr/bin/ipchange
     [Yy]* ) bash /usr/bin/ipupdate; exit;;
     * ) echo "To run the script enter: ipupdate"; exit;;
   esac
-done
+exit 0
