@@ -49,9 +49,10 @@ else
 fi
 clear
 sudo chmod a+x /usr/bin/ipchange
-  read -p "Installation complete. Do you want to run the script [Y/n] ? " yn
-  case $yn in
-    [Yy]* ) bash /usr/bin/ipupdate; exit;;
-    * ) echo "To run the script enter: ipupdate"; exit;;
-  esac
+read -r -p "Installation complete. Do you want to run the script [Y/n] ? " yn
+case $yn in
+  [Yy]* ) bash /usr/bin/ipupdate; break;;
+  * ) echo 'To run the script enter: ipupdate'
+  break;;
+esac
 exit 0
