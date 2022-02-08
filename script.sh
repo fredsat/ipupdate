@@ -51,3 +51,4 @@ case $yn in
   * ) echo 'To run the script enter: ipupdate';;
 esac
 exit 0
+#ok
