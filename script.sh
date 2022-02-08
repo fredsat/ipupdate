@@ -6,7 +6,7 @@ fi
 clear
 cd $HOME
 
-[ -d "$HOME/temp_ipupdate_script_install ] && { rm -dr temp_ipupdate_script_install; }
+[ -d "temp_ipupdate_script_install ] && { rm -dr temp_ipupdate_script_install; }
 
 if [ -d "/home/crypto-data/" ]
 then
