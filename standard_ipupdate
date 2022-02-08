@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CONFIGDIR='/var/web/'
+echo $CONFIGDIR
+OLDIP=$(awk '/YAAMP_ADMIN_IP/ {print $2}' $CONFIGDIR/serverconfig.php | sed -r s/[\'\;]//g | sed s/")"//g)
+NEWIP=$(echo $SSH_CLIENT | awk '{print $1}')
+
+if [[ "$NEWIP" != "$OLDIP" ]]; then
+  #change line:
+  sed -in "s/$OLDIP/$NEWIP/" $CONFIGDIR/serverconfig.php
+  echo "New admin IP changed from $OLDIP to " && awk '/YAAMP_ADMIN_IP/ {print $2}' $CONFIGDIR/serverconfig.php
+else
+  echo "Current Admin IP ($OLDIP) unchanged!"
+fi
+
