@@ -7,7 +7,6 @@ clear
 cd $HOME
 
 [ -d "temp_ipupdate_script_install ] && { rm -dr temp_ipupdate_script_install; }
-
 if [ -d "/home/crypto-data/" ]
 then
   if [ -f "/home/crypto-data/yiimp/site/configuration/serverconfig.php" ]
@@ -30,8 +29,8 @@ then
   if [ -f "/var/web/serverconfig.php" ]
   then
     sudo touch /var/bin/ipupdate
-    mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install     
-    git clone https://github.com/fredsat/butkpoolscripts.git
+    mkdir temp_ipupdate_script_install && cd temp_ipupdate_script_install
+    git clone 'https://github.com/fredsat/butkpoolscripts.git'
     echo "Installing for standard yiimp install"
     sudo cp standard_ipupdate /usr/bin/
     cd $HOME
@@ -50,11 +49,9 @@ else
 fi
 clear
 sudo chmod a+x /usr/bin/ipchange
-while true; do
-    read -p "Installation complete. Do you want to run the script \(Y\/n\)\?" yn
-    case $yn in
-        [Yy]* ) bash /usr/bin/ipupdate; break;;
-        * ) echo "To run the script enter: ipupdate"; exit;;
-    esac
+  read -p "Installation complete. Do you want to run the script [Y/n] ? " yn
+  case $yn in
+    [Yy]* ) bash /usr/bin/ipupdate; break;;
+    * ) echo "To run the script enter: ipupdate"; exit;;
+  esac
 done
-
