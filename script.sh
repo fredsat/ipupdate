@@ -14,7 +14,9 @@ then
     cd $HOME
     rm -drf temp_ipupdate_script_install
   else
-    echo "Could not find serverconfig.php in the right folder!"
+    echo "ERROR: Could not find serverconfig.php in the right folder!"
+    echo
+    echo
     exit 1
   fi
 elif [ -d "/var/web/" ]
@@ -28,11 +30,15 @@ then
     cd $HOME
     rm -drf temp_ipupdate_script_install
   else
-    echo "Could not find serverconfig.php in the right folder!"
+    echo "ERROR: Could not find serverconfig.php in the right folder!"
+    echo
+    echo
     exit 1
   fi
 else
-  echo "Could not find standard Yiimp folders. Check your installation first!"
+  echo "ERROR: Could not find standard Yiimp folders. Check your installation first!"
+  echo
+  echo
   exit 1
 fi
 clear
@@ -40,6 +46,9 @@ sudo chmod a+x /usr/bin/ipchange
 echo "Installation complete. Do you want to run the script (Y/n)?"
 read yno
 [ yno == "Y" ] || [ yno == "y" ] && { bash /usr/bin/ipchange; exit 0; }
+clear
 echo "To run the script, use the command: ipchange"
+echo
+echo
 exit 0
 
