@@ -50,11 +50,11 @@ else
 fi
 clear
 sudo chmod a+x /usr/bin/ipchange
-echo "Installation complete. Do you want to run the script (Y/n)?"
-select yn in "Yes" "No"; do
+while true; do
+    read -p "Installation complete. Do you want to run the script (Y/n)?" yn
     case $yn in
-        Yes ) bash /usr/bin/ipchange; exit 0;;
-        No ) echo "To run the script, use the command: ipchange"; exit;;
+        [Yy]* ) bash /usr/bin/ipupdate; break;;
+        * ) echo "To run the script enter: ipupdate"; exit;;
     esac
 done
 
