@@ -47,7 +47,7 @@ fi
 sudo chmod a+x /usr/bin/ipupdate
 read -r -p "Installation complete. Do you want to run the script [Y/n] ? " yn
 case $yn in
-  [Yy]* ) bash /usr/bin/ipupdate;;
+  [Yy]* ) ipupdate;;
   * ) echo 'To run the script enter: ipupdate';;
 esac
 exit 0
