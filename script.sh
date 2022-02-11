@@ -45,10 +45,8 @@ else
   exit 1
 fi
 sudo chmod a+x /usr/bin/ipupdate
-read -r -p "Installation complete. Do you want to run the script [Y/n] ? " yn
-case $yn in
-  [Yy]* ) ipupdate;;
-  * ) echo 'To run the script enter: ipupdate';;
+echo "Installation complete."
+echo 'To run the script enter: ipupdate'
 esac
 exit 0
-#ok
+
